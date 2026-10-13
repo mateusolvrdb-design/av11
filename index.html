@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Aços Vital · 11 anos</title>
+<meta name="theme-color" content="#0f1b2d">
+
+<script>
+  /* =====================================================================
+     EDITAR AQUI: LINK DO VÍDEO
+     Cole o link do YouTube (não listado) ou do Vimeo entre as aspas.
+     Pode ser o link normal, ex.:
+       "https://www.youtube.com/watch?v=XXXXXXXXXXX"
+       "https://youtu.be/XXXXXXXXXXX"
+       "https://vimeo.com/123456789"
+     Se ficar vazio (""), a página mostra o cartão "Vídeo em breve".
+     ===================================================================== */
+  var VIDEO_URL = "";
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #0f1b2d;
+    --bg-2: #15253c;
+    --text: #e8edf3;
+    --muted: #9aa8b8;
+    --steel: #c3ccd6;
+    --steel-dark: #7d8a99;
+    --line: rgba(195, 204, 214, 0.18);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    background: var(--bg);
+    background-image: radial-gradient(ellipse at 50% -10%, #1d3150 0%, var(--bg) 60%);
+    background-attachment: fixed;
+    color: var(--text);
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+  main {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 48px 20px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  /* 1. Topo */
+  header { text-align: center; }
+  .brand {
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--steel);
+  }
+  .years {
+    margin-top: 6px;
+    font-size: 0.85rem;
+    letter-spacing: 0.3em;
+    color: var(--muted);
+  }
+  .rule {
+    width: 64px;
+    height: 2px;
+    margin: 22px auto 0;
+    background: linear-gradient(90deg, transparent, var(--steel), transparent);
+  }
+
+  /* 2. Slogan */
+  .slogan {
+    text-align: center;
+    font-size: clamp(1.7rem, 7vw, 2.6rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    background: linear-gradient(180deg, #ffffff 0%, var(--steel) 55%, var(--steel-dark) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* 3. Vídeo */
+  .video {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: var(--bg-2);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+  }
+  .video iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  .soon {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(145deg, #1a2d47 0%, #111f33 100%);
+  }
+  .soon-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 1.5px solid var(--steel);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .soon-icon::after {
+    content: "";
+    margin-left: 4px;
+    border-style: solid;
+    border-width: 9px 0 9px 15px;
+    border-color: transparent transparent transparent var(--steel);
+  }
+  .soon-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--text);
+  }
+  .soon-sub { font-size: 0.85rem; color: var(--muted); }
+
+  /* 4. Mensagem */
+  .message {
+    padding: 28px 24px;
+    border-radius: 14px;
+    border: 1px solid var(--line);
+    background: rgba(255, 255, 255, 0.03);
+  }
+  .message p + p { margin-top: 14px; }
+  .message p { color: var(--text); font-weight: 300; font-size: 1.02rem; }
+
+  /* 5. Rodapé */
+  footer {
+    text-align: center;
+    padding: 8px 0 24px;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+<main>
+
+  <!-- 1. TOPO -->
+  <header>
+    <div class="brand">Aços Vital · 11 anos</div>
+    <div class="years">2015–2026</div>
+    <div class="rule"></div>
+  </header>
+
+  <!-- 2. SLOGAN -->
+  <h1 class="slogan">Quando tudo gira junto, a empresa cresce.</h1>
+
+  <!-- 3. VÍDEO (o link fica na variável VIDEO_URL, lá no topo do arquivo) -->
+  <section class="video" id="video" aria-label="Vídeo de homenagem">
+    <div class="soon">
+      <div class="soon-icon" aria-hidden="true"></div>
+      <div class="soon-title">Vídeo em breve</div>
+      <div class="soon-sub">Uma homenagem especial está a caminho.</div>
+    </div>
+  </section>
+
+  <!-- 4. MENSAGEM -->
+  <!-- EDITAR: troque os parágrafos abaixo pelo texto final da homenagem -->
+  <section class="message">
+    <p>Parabéns pelos 11 anos da Aços Vital.</p>
+    <p>Desde 2015, cada conquista foi construída com trabalho, dedicação e pessoas caminhando na mesma direção. Que os próximos anos tragam ainda mais crescimento e realizações.</p>
+  </section>
+  <!-- /EDITAR -->
+
+  <!-- 5. RODAPÉ -->
+  <footer>Com carinho, IA Genix</footer>
+
+</main>
+
+<script>
+  (function () {
+    var url = (VIDEO_URL || "").trim();
+    if (!url) return;
+    var src = null, m;
+    if ((m = url.match(/(?:youtube\.com\/(?:watch\?(?:.*&)?v=|embed\/|shorts\/|live\/)|youtu\.be\/)([\w-]{11})/))) {
+      src = "https://www.youtube-nocookie.com/embed/" + m[1] + "?rel=0&modestbranding=1&playsinline=1";
+    } else if ((m = url.match(/vimeo\.com\/(?:video\/)?(\d+)(?:\/(\w+))?/))) {
+      src = "https://player.vimeo.com/video/" + m[1] + (m[2] ? "?h=" + m[2] : "");
+    }
+    if (!src) return; // link não reconhecido: mantém "Vídeo em breve"
+    var f = document.createElement("iframe");
+    f.src = src;
+    f.title = "Vídeo de homenagem · Aços Vital 11 anos";
+    f.allow = "autoplay; fullscreen; picture-in-picture; encrypted-media";
+    f.allowFullscreen = true;
+    var box = document.getElementById("video");
+    box.innerHTML = "";
+    box.appendChild(f);
+  })();
+</script>
+</body>
+</html>
