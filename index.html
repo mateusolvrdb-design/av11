@@ -5,218 +5,325 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <title>Aços Vital · 11 anos</title>
-<meta name="theme-color" content="#0f1b2d">
+<meta name="description" content="Uma homenagem aos 11 anos da Aços Vital.">
+<meta name="theme-color" content="#05080e">
 
 <script>
   /* =====================================================================
-     EDITAR AQUI: LINK DO VÍDEO
-     Cole o link do YouTube (não listado) ou do Vimeo entre as aspas.
-     Pode ser o link normal, ex.:
-       "https://www.youtube.com/watch?v=XXXXXXXXXXX"
-       "https://youtu.be/XXXXXXXXXXX"
-       "https://vimeo.com/123456789"
-     Se ficar vazio (""), a página mostra o cartão "Vídeo em breve".
+     EDITAR AQUI: VÍDEO
+     O vídeo fica hospedado neste próprio site (pasta "video/").
+     Para trocar, substitua os arquivos mantendo os mesmos nomes:
+       video/homenagem-720.mp4   (celular)
+       video/homenagem-1080.mp4  (telas grandes)
+       video/poster.jpg          (imagem antes do play)
+     Se preferir YouTube (não listado) ou Vimeo, cole o link em VIDEO_URL;
+     quando VIDEO_URL estiver preenchido, ele é usado no lugar dos arquivos.
      ===================================================================== */
   var VIDEO_URL = "";
+  var VIDEO_SRC_MOBILE = "video/homenagem-720.mp4";
+  var VIDEO_SRC_DESKTOP = "video/homenagem-1080.mp4";
+  var VIDEO_POSTER = "video/poster.jpg";
 </script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Inter:wght@300;500;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
 
 <style>
   :root {
-    --bg: #0f1b2d;
-    --bg-2: #15253c;
-    --text: #e8edf3;
-    --muted: #9aa8b8;
-    --steel: #c3ccd6;
-    --steel-dark: #7d8a99;
-    --line: rgba(195, 204, 214, 0.18);
+    --ink: #05080e;
+    --ink-2: #0b1220;
+    --fg: #e8eef5;
+    --muted: #8b9cb2;
+    --hud: #a9c7e6;
+    --line: rgba(169, 199, 230, 0.18);
+    --gold: #e6b874;
+    --gold-soft: #f4dcae;
+    --serif: "Cormorant Garamond", Georgia, serif;
+    --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { -webkit-text-size-adjust: 100%; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
   body {
-    background: var(--bg);
-    background-image: radial-gradient(ellipse at 50% -10%, #1d3150 0%, var(--bg) 60%);
-    background-attachment: fixed;
-    color: var(--text);
-    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: var(--ink);
+    color: var(--fg);
+    font-family: var(--sans);
     line-height: 1.6;
-    min-height: 100vh;
+    overflow-x: hidden;
   }
-  main {
-    max-width: 680px;
-    margin: 0 auto;
-    padding: 48px 20px 32px;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-  }
+  .mono { font-family: var(--mono); text-transform: uppercase; letter-spacing: .18em; font-size: .72rem; color: var(--hud); }
 
-  /* 1. Topo */
-  header { text-align: center; }
-  .brand {
-    font-size: 0.95rem;
-    font-weight: 600;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--steel);
-  }
-  .years {
-    margin-top: 6px;
-    font-size: 0.85rem;
-    letter-spacing: 0.3em;
-    color: var(--muted);
-  }
-  .rule {
-    width: 64px;
-    height: 2px;
-    margin: 22px auto 0;
-    background: linear-gradient(90deg, transparent, var(--steel), transparent);
-  }
-
-  /* 2. Slogan */
-  .slogan {
-    text-align: center;
-    font-size: clamp(1.7rem, 7vw, 2.6rem);
-    font-weight: 700;
-    line-height: 1.2;
-    letter-spacing: -0.01em;
-    background: linear-gradient(180deg, #ffffff 0%, var(--steel) 55%, var(--steel-dark) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-
-  /* 3. Vídeo */
-  .video {
+  /* 1. Abertura */
+  .hero {
     position: relative;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    border-radius: 14px;
-    overflow: hidden;
-    border: 1px solid var(--line);
-    background: var(--bg-2);
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
-  }
-  .video iframe {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-  }
-  .soon {
-    position: absolute;
-    inset: 0;
+    min-height: 100svh;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    gap: 14px;
-    text-align: center;
-    padding: 20px;
-    background: linear-gradient(145deg, #1a2d47 0%, #111f33 100%);
+    padding: 72px 22px 56px;
+    overflow: hidden;
+    isolation: isolate;
   }
-  .soon-icon {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    border: 1.5px solid var(--steel);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .soon-icon::after {
+  .hero::before {
     content: "";
-    margin-left: 4px;
-    border-style: solid;
-    border-width: 9px 0 9px 15px;
-    border-color: transparent transparent transparent var(--steel);
+    position: absolute; inset: 0; z-index: -2;
+    background-image:
+      linear-gradient(rgba(169,199,230,.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(169,199,230,.06) 1px, transparent 1px);
+    background-size: 44px 44px;
+    mask-image: radial-gradient(ellipse at 50% 40%, #000 20%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse at 50% 40%, #000 20%, transparent 75%);
   }
-  .soon-title {
-    font-size: 1.1rem;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    color: var(--text);
+  .hero::after {
+    content: "";
+    position: absolute; left: 50%; top: 58%; z-index: -1;
+    width: 140vmax; height: 140vmax; transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(230,184,116,.16) 0%, rgba(230,184,116,0) 45%);
+    animation: breathe 7s ease-in-out infinite;
   }
-  .soon-sub { font-size: 0.85rem; color: var(--muted); }
+  @keyframes breathe { 50% { opacity: .55; transform: translate(-50%, -50%) scale(1.06); } }
+  .hero-inner { max-width: 760px; width: 100%; margin: 0 auto; }
+  .boot { min-height: 4.6em; }
+  .boot div { opacity: 0; transform: translateX(-6px); transition: opacity .5s, transform .5s; }
+  .boot div.on { opacity: 1; transform: none; }
+  .boot b { color: var(--fg); font-weight: 400; }
+  .cursor { display: inline-block; width: .55em; height: 1em; background: var(--hud); vertical-align: -2px; margin-left: 4px; animation: blink 1s steps(1) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+  .brand { margin-top: 34px; font-weight: 700; font-size: clamp(2.6rem, 11vw, 5.2rem); line-height: 1; letter-spacing: -.03em; }
+  .brand span { display: block; font-weight: 300; color: var(--muted); font-size: .42em; letter-spacing: .32em; margin-top: 14px; text-transform: uppercase; }
+  .slogan { margin-top: 30px; font-family: var(--serif); font-style: italic; font-weight: 500; font-size: clamp(1.7rem, 7vw, 2.6rem); line-height: 1.2; color: var(--gold-soft); max-width: 15em; }
+  .cta {
+    margin-top: 40px;
+    display: inline-flex; align-items: center; gap: 14px;
+    padding: 16px 26px 16px 18px;
+    border: 1px solid rgba(244,220,174,.5);
+    border-radius: 999px;
+    color: var(--fg); background: rgba(230,184,116,.08);
+    font: 500 1rem var(--sans); letter-spacing: .02em;
+    text-decoration: none; cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: background .3s, transform .3s;
+  }
+  .cta:active { transform: scale(.98); }
+  .cta:hover { background: rgba(230,184,116,.16); }
+  .cta i { width: 38px; height: 38px; border-radius: 50%; background: var(--gold); display: grid; place-items: center; flex: none; }
+  .cta i::after { content: ""; margin-left: 3px; border-style: solid; border-width: 7px 0 7px 12px; border-color: transparent transparent transparent var(--ink); }
+  .scroll-hint { position: absolute; left: 50%; bottom: 22px; transform: translateX(-50%); width: 1px; height: 38px; background: linear-gradient(var(--hud), transparent); opacity: .6; }
 
-  /* 4. Mensagem */
-  .message {
-    padding: 28px 24px;
-    border-radius: 14px;
-    border: 1px solid var(--line);
-    background: rgba(255, 255, 255, 0.03);
+  /* 2. Vídeo */
+  .film { padding: 24px 0 72px; }
+  .film-head { max-width: 1100px; margin: 0 auto 16px; padding: 0 22px; display: flex; justify-content: space-between; gap: 12px; }
+  .player {
+    position: relative; width: 100%; max-width: 1100px; margin: 0 auto;
+    aspect-ratio: 16 / 9; background: #000; overflow: hidden;
   }
-  .message p + p { margin-top: 14px; }
-  .message p { color: var(--text); font-weight: 300; font-size: 1.02rem; }
+  @media (min-width: 1140px) { .player { border-radius: 10px; box-shadow: 0 30px 80px rgba(0,0,0,.6); } }
+  .player video, .player iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: #000; }
+  .player .poster-btn {
+    position: absolute; inset: 0; display: grid; place-items: center; border: 0; cursor: pointer;
+    background: center / cover no-repeat; -webkit-tap-highlight-color: transparent;
+  }
+  .player .poster-btn::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(5,8,14,.15), rgba(5,8,14,.6)); }
+  .player .poster-btn span {
+    position: relative; width: 74px; height: 74px; border-radius: 50%;
+    background: rgba(230,184,116,.92); display: grid; place-items: center;
+    box-shadow: 0 0 0 10px rgba(230,184,116,.18); transition: transform .3s;
+  }
+  .player .poster-btn:hover span { transform: scale(1.06); }
+  .player .poster-btn span::after { content: ""; margin-left: 5px; border-style: solid; border-width: 13px 0 13px 21px; border-color: transparent transparent transparent var(--ink); }
+  .soon { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; padding: 20px; background: linear-gradient(145deg, #121c2c, #070b12); }
+  .tip { max-width: 1100px; margin: 12px auto 0; padding: 0 22px; color: var(--muted); font-size: .82rem; }
 
-  /* 5. Rodapé */
-  footer {
-    text-align: center;
-    padding: 8px 0 24px;
-    font-size: 0.75rem;
-    letter-spacing: 0.08em;
-    color: var(--muted);
+  /* 3. Linha do tempo */
+  .section { max-width: 760px; margin: 0 auto; padding: 72px 22px; }
+  .section h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(2rem, 8vw, 3rem); line-height: 1.1; margin-top: 14px; }
+  .timeline { list-style: none; margin-top: 44px; position: relative; }
+  .timeline::before { content: ""; position: absolute; left: 6px; top: 8px; bottom: 8px; width: 1px; background: linear-gradient(var(--line), rgba(230,184,116,.45)); }
+  .timeline li { position: relative; padding: 0 0 38px 40px; }
+  .timeline li::before { content: ""; position: absolute; left: 0; top: 7px; width: 13px; height: 13px; border-radius: 50%; border: 1px solid var(--hud); background: var(--ink); }
+  .timeline li.gold::before { border-color: var(--gold); background: var(--gold); box-shadow: 0 0 0 6px rgba(230,184,116,.15); }
+  .timeline .k { display: block; }
+  .timeline .v { display: block; font-size: 1.22rem; font-weight: 500; margin-top: 4px; }
+  .timeline .d { display: block; color: var(--muted); font-weight: 300; margin-top: 2px; }
+  .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 10px; }
+  .stats div { background: var(--ink); padding: 20px 16px; }
+  .stats strong { display: block; font-weight: 300; font-size: clamp(2rem, 9vw, 2.8rem); line-height: 1; letter-spacing: -.03em; }
+  .stats span { display: block; margin-top: 8px; }
+
+  /* 4. Versículo */
+  .verse { text-align: center; padding: 88px 22px; position: relative; overflow: hidden; }
+  .verse::before { content: ""; position: absolute; left: 50%; top: 50%; width: 120vmax; height: 120vmax; transform: translate(-50%, -50%); background: radial-gradient(circle, rgba(230,184,116,.14), rgba(230,184,116,0) 40%); z-index: -1; }
+  .verse blockquote { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: clamp(1.8rem, 7vw, 2.8rem); line-height: 1.25; color: var(--gold-soft); max-width: 18em; margin: 0 auto; }
+  .verse cite { display: block; margin-top: 22px; font-style: normal; font-size: .78rem; letter-spacing: .38em; text-transform: uppercase; color: var(--gold); }
+
+  /* 5. Mensagem */
+  .message { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 34px 0; margin-top: 26px; }
+  .message p { font-weight: 300; font-size: 1.1rem; color: var(--fg); }
+  .message p + p { margin-top: 16px; }
+
+  /* 6. Rodapé */
+  footer { text-align: center; padding: 56px 22px 64px; }
+  footer .motto { font-family: var(--serif); font-style: italic; font-size: 1.5rem; color: var(--gold-soft); }
+  footer .sign { margin-top: 26px; font-size: .74rem; letter-spacing: .14em; color: var(--muted); }
+
+  /* revelação ao rolar */
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity .9s ease, transform .9s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal, .boot div { opacity: 1 !important; transform: none !important; transition: none !important; }
+    .hero::after, .cursor { animation: none; }
+  }
+  @media (min-width: 900px) {
+    .hero { padding-left: 48px; padding-right: 48px; }
+    .stats { grid-template-columns: repeat(4, 1fr); }
   }
 </style>
 </head>
 <body>
-<main>
 
-  <!-- 1. TOPO -->
-  <header>
-    <div class="brand">Aços Vital · 11 anos</div>
-    <div class="years">2015–2026</div>
-    <div class="rule"></div>
-  </header>
-
-  <!-- 2. SLOGAN -->
-  <h1 class="slogan">Quando tudo gira junto, a empresa cresce.</h1>
-
-  <!-- 3. VÍDEO (o link fica na variável VIDEO_URL, lá no topo do arquivo) -->
-  <section class="video" id="video" aria-label="Vídeo de homenagem">
-    <div class="soon">
-      <div class="soon-icon" aria-hidden="true"></div>
-      <div class="soon-title">Vídeo em breve</div>
-      <div class="soon-sub">Uma homenagem especial está a caminho.</div>
+<!-- 1. ABERTURA -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="boot mono" aria-hidden="true">
+      <div>&gt; genix · análise concluída</div>
+      <div>&gt; alvo: <b>Aços Vital</b></div>
+      <div>&gt; variável encontrada<span class="cursor"></span></div>
     </div>
-  </section>
+    <h1 class="brand">Aços Vital<span>11 anos · 2015–2026</span></h1>
+    <p class="slogan">Quando tudo gira junto, a empresa cresce.</p>
+    <a class="cta" href="#filme" id="cta"><i></i>Assistir à homenagem</a>
+  </div>
+  <div class="scroll-hint" aria-hidden="true"></div>
+</header>
 
-  <!-- 4. MENSAGEM -->
+<!-- 2. VÍDEO -->
+<section class="film" id="filme" aria-label="Vídeo de homenagem">
+  <div class="film-head">
+    <span class="mono">A variável que faltava</span>
+    <span class="mono" style="color:var(--muted)">1 min 34 s</span>
+  </div>
+  <div class="player" id="player"></div>
+  <p class="tip">Dica: ative o som e gire o celular para assistir em tela cheia.</p>
+</section>
+
+<!-- 3. LINHA DO TEMPO (fatos confirmados) -->
+<section class="section">
+  <div class="reveal">
+    <span class="mono">Trajetória</span>
+    <h2>De Pindorama para o mundo.</h2>
+  </div>
+  <ol class="timeline">
+    <li class="reveal"><span class="k mono">Origem</span><span class="v">Pindorama, Bahia</span><span class="d">Povoado a 18 km de Iuiú, no sudoeste baiano, onde Joanes Oliveira nasceu e cresceu.</span></li>
+    <li class="reveal"><span class="k mono">O começo</span><span class="v">Ajudante de pedreiro</span><span class="d">Carregou tijolo antes de carregar uma empresa.</span></li>
+    <li class="reveal"><span class="k mono">A virada</span><span class="v">Vendas</span><span class="d">Cliente a cliente, a lição que sustenta tudo: confiança.</span></li>
+    <li class="reveal"><span class="k mono">2015</span><span class="v">Nasce a Aços Vital</span><span class="d">Joanes e Amanda abrem as portas de um galpão simples.</span></li>
+    <li class="reveal"><span class="k mono">2026</span><span class="v">Onze anos depois</span>
+      <div class="stats">
+        <div><strong>500</strong><span class="mono">colaboradores diretos</span></div>
+        <div><strong>80 mil</strong><span class="mono">m² construídos</span></div>
+        <div><strong>3</strong><span class="mono">continentes atendidos</span></div>
+        <div><strong>11</strong><span class="mono">anos de história</span></div>
+      </div>
+      <span class="d" style="margin-top:12px">América do Sul, Europa e Estados Unidos, a partir de Mogi das Cruzes, SP.</span>
+    </li>
+    <li class="reveal gold"><span class="k mono" style="color:var(--gold)">Agora</span><span class="v">Uma nova era</span><span class="d">Porque quando tudo gira junto, a empresa cresce.</span></li>
+  </ol>
+</section>
+
+<!-- 4. VERSÍCULO -->
+<section class="verse">
+  <blockquote class="reveal">“Consagre ao Senhor tudo o que você faz, e os seus planos serão bem-sucedidos.”</blockquote>
+  <cite class="reveal">Provérbios 16:3</cite>
+</section>
+
+<!-- 5. MENSAGEM -->
+<section class="section" style="padding-top:24px">
+  <span class="mono reveal">Mensagem</span>
   <!-- EDITAR: troque os parágrafos abaixo pelo texto final da homenagem -->
-  <section class="message">
-    <p>Parabéns pelos 11 anos da Aços Vital.</p>
-    <p>Desde 2015, cada conquista foi construída com trabalho, dedicação e pessoas caminhando na mesma direção. Que os próximos anos tragam ainda mais crescimento e realizações.</p>
-  </section>
+  <div class="message reveal">
+    <p>Joanes e Amanda, parabéns pelos 11 anos da Aços Vital.</p>
+    <p>Cada galpão, cada cliente e cada colaborador conta uma história de fé, trabalho e confiança. Que a próxima era seja ainda maior.</p>
+  </div>
   <!-- /EDITAR -->
+</section>
 
-  <!-- 5. RODAPÉ -->
-  <footer>Com carinho, IA Genix</footer>
-
-</main>
+<!-- 6. RODAPÉ -->
+<footer>
+  <p class="motto">A confiança é o que nos conecta.</p>
+  <p class="sign">Com carinho, IA Genix</p>
+</footer>
 
 <script>
   (function () {
-    var url = (VIDEO_URL || "").trim();
-    if (!url) return;
-    var src = null, m;
-    if ((m = url.match(/(?:youtube\.com\/(?:watch\?(?:.*&)?v=|embed\/|shorts\/|live\/)|youtu\.be\/)([\w-]{11})/))) {
-      src = "https://www.youtube-nocookie.com/embed/" + m[1] + "?rel=0&modestbranding=1&playsinline=1";
-    } else if ((m = url.match(/vimeo\.com\/(?:video\/)?(\d+)(?:\/(\w+))?/))) {
-      src = "https://player.vimeo.com/video/" + m[1] + (m[2] ? "?h=" + m[2] : "");
+    // linhas de abertura
+    var lines = document.querySelectorAll(".boot div");
+    lines.forEach(function (el, i) { setTimeout(function () { el.classList.add("on"); }, 250 + i * 550); });
+
+    // revelação ao rolar
+    var els = document.querySelectorAll(".reveal");
+    if ("IntersectionObserver" in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+      }, { threshold: 0.15 });
+      els.forEach(function (el) { io.observe(el); });
+    } else {
+      els.forEach(function (el) { el.classList.add("in"); });
     }
-    if (!src) return; // link não reconhecido: mantém "Vídeo em breve"
-    var f = document.createElement("iframe");
-    f.src = src;
-    f.title = "Vídeo de homenagem · Aços Vital 11 anos";
-    f.allow = "autoplay; fullscreen; picture-in-picture; encrypted-media";
-    f.allowFullscreen = true;
-    var box = document.getElementById("video");
-    box.innerHTML = "";
-    box.appendChild(f);
+
+    // player
+    var box = document.getElementById("player");
+    var url = (VIDEO_URL || "").trim();
+
+    function embedFromUrl(u) {
+      var m;
+      if ((m = u.match(/(?:youtube\.com\/(?:watch\?(?:.*&)?v=|embed\/|shorts\/|live\/)|youtu\.be\/)([\w-]{11})/))) {
+        return "https://www.youtube-nocookie.com/embed/" + m[1] + "?rel=0&modestbranding=1&playsinline=1&autoplay=1";
+      }
+      if ((m = u.match(/vimeo\.com\/(?:video\/)?(\d+)(?:\/(\w+))?/))) {
+        return "https://player.vimeo.com/video/" + m[1] + "?autoplay=1" + (m[2] ? "&h=" + m[2] : "");
+      }
+      return null;
+    }
+
+    function soon() {
+      box.innerHTML = '<div class="soon"><div><div class="mono">Vídeo em breve</div><p style="margin-top:10px;color:var(--muted)">Uma homenagem especial está a caminho.</p></div></div>';
+    }
+
+    var src = window.matchMedia("(min-width: 1000px)").matches ? VIDEO_SRC_DESKTOP : VIDEO_SRC_MOBILE;
+    var embed = url ? embedFromUrl(url) : null;
+    if (url && !embed) { soon(); return; }
+
+    var btn = document.createElement("button");
+    btn.className = "poster-btn";
+    btn.setAttribute("aria-label", "Assistir ao vídeo de homenagem");
+    btn.style.backgroundImage = "url('" + VIDEO_POSTER + "')";
+    btn.innerHTML = "<span></span>";
+    box.appendChild(btn);
+
+    function play() {
+      if (embed) {
+        var f = document.createElement("iframe");
+        f.src = embed;
+        f.title = "Vídeo de homenagem · Aços Vital 11 anos";
+        f.allow = "autoplay; fullscreen; picture-in-picture; encrypted-media";
+        f.allowFullscreen = true;
+        box.innerHTML = ""; box.appendChild(f);
+        return;
+      }
+      var v = document.createElement("video");
+      v.src = src; v.controls = true; v.playsInline = true; v.setAttribute("playsinline", "");
+      v.poster = VIDEO_POSTER; v.preload = "auto";
+      v.onerror = soon;
+      box.innerHTML = ""; box.appendChild(v);
+      var p = v.play(); if (p && p.catch) p.catch(function () {});
+    }
+    btn.addEventListener("click", play);
+    document.getElementById("cta").addEventListener("click", function (e) {
+      e.preventDefault();
+      document.getElementById("filme").scrollIntoView({ behavior: "smooth", block: "center" });
+      setTimeout(play, 450);
+    });
   })();
 </script>
 </body>
