@@ -187,6 +187,31 @@
     .reveal, .boot div { opacity: 1 !important; transform: none !important; transition: none !important; }
     .hero::after, .cursor { animation: none; }
   }
+  /* celular: composição centrada, logo e frase em proporção com a tela */
+  .slogan, .section h2, .verse blockquote { text-wrap: balance; }
+  @media (max-width: 640px) {
+    .hero { padding: 64px 24px 72px; text-align: center; }
+    .boot { min-height: 0; font-size: .66rem; letter-spacing: .14em; }
+    .brand-logo { width: min(260px, 68vw); margin: 30px auto 0; }
+    .brand-years { margin-top: 16px; font-size: .86rem; letter-spacing: .28em; }
+    .slogan { margin: 26px auto 0; font-size: 1.9rem; max-width: 11em; }
+    .cta { margin-top: 34px; }
+    .film { padding: 8px 0 48px; }
+    .film-head { padding: 0 18px; }
+    .tip { text-align: center; padding: 0 28px; }
+    .section { padding: 56px 24px; }
+    .section h2 { font-size: 2.15rem; }
+    .timeline { margin-top: 34px; }
+    .timeline li { padding-bottom: 32px; }
+    .timeline .v { font-size: 1.12rem; }
+    .timeline .d { font-size: .97rem; line-height: 1.55; }
+    .stats strong { font-size: 2.1rem; }
+    .stats div { padding: 18px 14px; }
+    .verse { padding: 64px 28px; }
+    .verse blockquote { font-size: 1.75rem; }
+    .message p { font-size: 1.05rem; }
+    footer { padding: 40px 24px 56px; }
+  }
   @media (min-width: 900px) {
     .hero { padding-left: 48px; padding-right: 48px; }
     .stats { grid-template-columns: repeat(4, 1fr); }
